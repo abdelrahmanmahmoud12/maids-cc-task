@@ -1,0 +1,21 @@
+<nav class="navbar py-3">
+  <div class="container-fluid">
+      <i class="bi bi-person-vcard-fill text-white fs-4 pe-5"> Dashboard</i>
+  </div>
+</nav>
+
+<section class="vh-100 w-100 d-flex flex-row justify-content-center align-items-center ">
+  <a href="/" ><i class="bi bi-arrow-left-circle-fill text-white fs-1 me-3"></i></a>
+
+  <div class="card user-card rounded-4 shadow" *ngIf="user" style="width: 18rem;">
+    <img class="card-img-top p-3 rounded-5" [src]="user.avatar" alt="{{user.first_name}}" />
+    <div class="card-body text-center text-white">
+      <h5>First Name: {{ user.first_name }} </h5>
+      <h5>Last Name: {{ user.last_name }}</h5>
+      <p>Email: {{ user.email }}</p>
+
+    </div>
+  </div>
+  
+
+</section>

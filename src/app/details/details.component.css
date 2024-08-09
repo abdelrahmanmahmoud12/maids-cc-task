@@ -1,0 +1,7 @@
+
+.card-img-top{
+    transition:all 0.5s;
+}
+.user-card:hover .card-img-top {
+        transform: scale(0.9);
+}

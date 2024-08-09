@@ -1,0 +1,42 @@
+<nav *ngIf="users.length != 0" class="navbar py-3">
+  <div class="container-fluid">
+      <i class="bi bi-person-vcard-fill text-white fs-4 pe-5"> Dashboard</i>
+  </div>
+</nav>
+  
+  <div *ngIf="users.length != 0" class="container">
+    <div class="search-bar col-md-6 offset-md-3 mt-5">
+      <input type="text" class="form-control shadow-none" placeholder="Search by ID" [(ngModel)]="searchId" (input)="searchUserById()">
+    </div>
+    <div class="row justify-content-center align-items-center" *ngIf="users.length">
+        <div class=" gy-3 row justify-content-center align-items-center col-lg-4 col-md-6" *ngFor="let user of users">
+            <div class="user-card card rounded-4 shadow" style="width: 15rem;">
+                <img class="card-img-top p-3 rounded-5" [src]="user.avatar" alt="{{user.first_name}}" />
+                <div class="card-body p-2 text-center">
+                    <h5 class="">{{ user.first_name }}</h5>
+                    <button class ="details-btn rounded-pill border-0 text-white py-1 px-4 mb-2" (click)="navigateToDetails(user.id)">View Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  <!-- Pagination -->
+  <nav class="mt-4" *ngIf="!isSearchValid" aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <a class="page-link" href="#" (click)="changePage(currentPage - 1)">Previous</a>
+      </li>
+      <li *ngFor="let page of totalPagesArray" class="page-item" [class.active]="page === currentPage">
+        <a class="page-link" href="#" (click)="changePage(page)">{{ page }}</a>
+      </li>
+      <li class="page-item" [class.disabled]="currentPage === totalPages">
+        <a class="page-link" href="#" (click)="changePage(currentPage + 1)">Next</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div *ngIf="users.length === 0" class="loading-screen d-flex justify-content-center align-items-center">
+  <div  class="loader ">
+      <div class="loaderBar"></div>
+  </div>
+</div>
