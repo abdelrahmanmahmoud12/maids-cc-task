@@ -15,16 +15,14 @@ Node.js (>=12.x)
 Angular CLI (>=12.x)
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
+##Installation
+Clone the repository:
+git clone https://github.com/abdelrahmanmahmoud12/maids-cc-task.git
+cd maids-cc-task
+npm install
+ng serve
+Open your browser and navigate to:
+http://localhost:4200
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
